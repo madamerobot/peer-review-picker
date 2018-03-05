@@ -5,7 +5,7 @@ const watchify = require('watchify')
 const nodemon = require('nodemon')
 const buffer = require('vinyl-buffer');
 const source = require('vinyl-source-stream')
-const uglify = require('gulp-uglify')
+// const uglify = require('gulp-uglify')
 const gulpUtil = require('gulp-util')
 
 gulp.task('watchJs', () => {
@@ -43,7 +43,7 @@ gulp.task('browserify', () => {
         .on('error', gulpUtil.log)
         .pipe(source('app.js'))
         .pipe(buffer())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('./dist/js'))
 })
 
